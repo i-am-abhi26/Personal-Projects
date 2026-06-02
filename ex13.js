@@ -52,5 +52,6 @@ function createCard(title,cname,views,monthsOld,duration,thumbnail){
     subdiv8.innerText=duration;
 }
 console.log("Hello");
-createCard("Installing VS Code & How Websites Work | Sigma Web Development Course - Tutorial #1","CodeWithHarry",750000,5,"30:20",'https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDf-xrqgUw55JSfKsoykKVhngkzRA');
-createCard("Backed React Js Introduction | Sigma Web Development Course - Tutorial #2","CodeWithHarry",7500000,5,"40:35",'https://i.ytimg.com/vi/kJEsTjH5mVg/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBN31a8sOnPAnEuvlpME-PMXo_01w');
+
+let button=document.querySelector("button");
+button.addEventListener("click",createCard(prompt("Enter Title"),prompt("Enter channel Name"),Number(prompt("Enter views")),prompt("Enter months old"),prompt("Enter duration"),prompt("Enter link of thumbnail")));
