@@ -1,4 +1,11 @@
-function createCard(title,cname,views,monthsOld,duration,thumbnail){
+function createCard(){
+    let title=prompt("Enter Title");
+    let cname=prompt("Enter channel Name");
+    let views=Number(prompt("Enter views"));
+    let monthsOld=prompt("Enter months old");
+    let duration=prompt("Enter duration");
+    let thumbnail=prompt("Enter link of thumbnail");
+
     let container=document.querySelector(".container");
     let div=document.createElement("div");    
     container.append(div);
@@ -28,11 +35,13 @@ function createCard(title,cname,views,monthsOld,duration,thumbnail){
     subdiv4.innerText=cname;
     let view;
     if(views>=1000 && views<1000000){
-        views/=1000;
+        views=Math.floor(views/100);
+        views/=10;
         view=String(views)+"K views";
     }
     else{
-        views/=1000000;
+        views=Math.floor(views/100000);
+        views/=10;
         view=String(views)+"M views";
     }
     let mold=String(monthsOld)+" months ago";
@@ -54,4 +63,4 @@ function createCard(title,cname,views,monthsOld,duration,thumbnail){
 console.log("Hello");
 
 let button=document.querySelector("button");
-button.addEventListener("click",createCard(prompt("Enter Title"),prompt("Enter channel Name"),Number(prompt("Enter views")),prompt("Enter months old"),prompt("Enter duration"),prompt("Enter link of thumbnail")));
+button.addEventListener("click",createCard);
